@@ -1,0 +1,66 @@
+{% block html_head_container %}
+  {% include 'layout/head.twig' %}
+  {% block head %}
+  {% endblock %}
+  </head>
+{% endblock %}
+
+<body class="{{ body_class }}" data-template="base.twig">
+<div class="alert">
+  <div id="email-success" class="alert__email alert__email--success is-hidden">
+    <p>Email Sent Successfully</p>
+  </div>
+  <div id="email-error" class="alert__email alert__email--error is-hidden">
+    <p>Error Sending Email</p>
+  </div>
+</div>
+
+<nav id="main-nav" class="c-nav-menu">
+  <div id="mobile-trigger" class="c-nav-menu__hamburger">
+    <span class="c-nav-menu__hamburger-span c-nav-menu__hamburger-span--1"></span>
+    <span class="c-nav-menu__hamburger-span c-nav-menu__hamburger-span--2"></span>
+    <span class="c-nav-menu__hamburger-span c-nav-menu__hamburger-span--3"></span>
+  </div>
+  <ul class="c-nav-menu__list">
+    {% for item in menu.items %}
+      <li class="c-nav-menu__item {{ item.classes|join(' ') }}">
+        <a class="c-nav-menu__link" href="{{ item.link }}">{{ item.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+<nav id="mobile-nav" class="c-nav-mobile">
+  <ul class="c-nav-mobile__list">
+    {% for item in menu.items %}
+      <li class="c-nav-mobile__item {{ item.classes|join(' ') }}">
+        <a class="c-nav-mobile__link" href="{{ item.link }}">{{ item.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+</nav>
+
+<header class="c-header {{ header_classes }}" style="{{ header_styles }}">
+  {% block header %}
+    <div class="c-header__background-gradient"></div>
+    <h1 class="c-header__title c-header__title--light">{{ post.title }}</h1>
+  {% endblock %}
+</header>
+
+<main id="content" role="main" class="content-wrapper">
+  {% do action('theme/post/content') %}
+  <div class="content__wrapper">
+    {% block content %}
+      {% include "partials/content-none.twig" %}
+    {% endblock %}
+  </div>
+</main>
+
+{% block footer %}
+  <footer class="c-footer">
+    {% include 'layout/footer.twig' %}
+  </footer>
+  {{ function('wp_footer') }}
+{% endblock %}
+</body>
+</html>

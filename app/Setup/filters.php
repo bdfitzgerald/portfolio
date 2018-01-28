@@ -1,6 +1,6 @@
 <?php
 
-namespace Tonik\Theme\App\Setup;
+namespace Twiggy\App\Setup;
 
 /*
 |-----------------------------------------------------------
@@ -27,8 +27,8 @@ function show_index_sidebar($status)
 
     return $status;
 }
-add_filter('theme/index/sidebar/visibility', 'Tonik\Theme\App\Setup\show_index_sidebar');
-add_filter('theme/single/sidebar/visibility', 'Tonik\Theme\App\Setup\show_index_sidebar');
+add_filter('theme/index/sidebar/visibility', 'Twiggy\App\Setup\show_index_sidebar');
+add_filter('theme/single/sidebar/visibility', 'Twiggy\App\Setup\show_index_sidebar');
 
 /**
  * Shortens posts excerpts to 60 words.
@@ -39,4 +39,4 @@ function modify_excerpt_length()
 {
     return 60;
 }
-add_filter('excerpt_length', 'Tonik\Theme\App\Setup\modify_excerpt_length');
+add_filter('excerpt_length', 'Twiggy\App\Setup\modify_excerpt_length');

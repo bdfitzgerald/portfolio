@@ -11,7 +11,7 @@ return [
     | be in sync with `Text Domain:` entry inside style.css theme file.
     |
     */
-    'textdomain' => '{{ theme.textdomain }}',
+    'textdomain' => 'twiggy',
 
     /*
     |--------------------------------------------------------------------------
@@ -78,6 +78,7 @@ return [
         'Setup/filters.php',
         'Setup/supports.php',
         'Setup/services.php',
+        'Setup/Timber.php',
         'Structure/navs.php',
         'Structure/widgets.php',
         'Structure/sidebars.php',
@@ -86,5 +87,6 @@ return [
         'Structure/taxonomies.php',
         'Structure/shortcodes.php',
         'Structure/thumbnails.php',
+        'Structure/ACF/settings.php',
     ],
 ];

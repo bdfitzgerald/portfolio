@@ -1,6 +1,6 @@
 <?php
 
-namespace Tonik\Theme\App\Structure;
+namespace Twiggy\App\Structure;
 
 /*
 |-----------------------------------------------------------
@@ -13,35 +13,35 @@ namespace Tonik\Theme\App\Structure;
 |
 */
 
-use function Tonik\Theme\App\config;
+use function Twiggy\App\config;
 
 /**
- * Registers `book` custom post type.
+ * Registers `portfolio` custom post type.
  *
  * @return void
  */
-function register_book_post_type()
+function register_portfolio_post_type()
 {
-    register_post_type('book', [
-        'description' => __('Collection of books.', config('textdomain')),
+    register_post_type('portfolio', [
+        'description' => __('Collection of portfolios.', config('textdomain')),
         'public' => true,
-        'supports' => ['title', 'editor', 'excerpt', 'thumbnail'],
+        'supports' => ['title', 'editor', 'thumbnail'],
         'labels' => [
-            'name' => _x('Books', 'post type general name', config('textdomain')),
-            'singular_name' => _x('Book', 'post type singular name', config('textdomain')),
-            'menu_name' => _x('Books', 'admin menu', config('textdomain')),
-            'name_admin_bar' => _x('Book', 'add new on admin bar', config('textdomain')),
-            'add_new' => _x('Add New', 'book', config('textdomain')),
-            'add_new_item' => __('Add New Book', config('textdomain')),
-            'new_item' => __('New Book', config('textdomain')),
-            'edit_item' => __('Edit Book', config('textdomain')),
-            'view_item' => __('View Book', config('textdomain')),
-            'all_items' => __('All Books', config('textdomain')),
-            'search_items' => __('Search Books', config('textdomain')),
-            'parent_item_colon' => __('Parent Books:', config('textdomain')),
-            'not_found' => __('No books found.', config('textdomain')),
-            'not_found_in_trash' => __('No books found in Trash.', config('textdomain')),
+            'name' => _x('Portfolios', 'post type general name', config('textdomain')),
+            'singular_name' => _x('Portfolio', 'post type singular name', config('textdomain')),
+            'menu_name' => _x('Portfolios', 'admin menu', config('textdomain')),
+            'name_admin_bar' => _x('Portfolio', 'add new on admin bar', config('textdomain')),
+            'add_new' => _x('Add New', 'portfolio', config('textdomain')),
+            'add_new_item' => __('Add New Portfolio', config('textdomain')),
+            'new_item' => __('New Portfolio', config('textdomain')),
+            'edit_item' => __('Edit Portfolio', config('textdomain')),
+            'view_item' => __('View Portfolio', config('textdomain')),
+            'all_items' => __('All Portfolios', config('textdomain')),
+            'search_items' => __('Search Portfolios', config('textdomain')),
+            'parent_item_colon' => __('Parent Portfolios:', config('textdomain')),
+            'not_found' => __('No portfolios found.', config('textdomain')),
+            'not_found_in_trash' => __('No portfolios found in Trash.', config('textdomain')),
         ],
     ]);
 }
-add_action('init', 'Tonik\Theme\App\Structure\register_book_post_type');
+add_action('init', 'Twiggy\App\Structure\register_portfolio_post_type');

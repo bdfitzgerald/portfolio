@@ -1,6 +1,6 @@
 <?php
 
-namespace Tonik\Theme\App\Structure;
+namespace Twiggy\App\Structure;
 
 /*
 |----------------------------------------------------------------
@@ -12,7 +12,7 @@ namespace Tonik\Theme\App\Structure;
 |
 */
 
-use function Tonik\Theme\App\config;
+use function Twiggy\App\config;
 
 /**
  * Registers navigation areas.
@@ -22,7 +22,8 @@ use function Tonik\Theme\App\config;
 function register_navigation_areas()
 {
     register_nav_menus([
-        'primary' => __('Primary', config('textdomain')),
+        'home' => __('Home', config('textdomain')),
+        'portfolio' => __('Portfolio', config('textdomain')),
     ]);
 }
-add_action('after_setup_theme', 'Tonik\Theme\App\Structure\register_navigation_areas');
+add_action('after_setup_theme', 'Twiggy\App\Structure\register_navigation_areas');

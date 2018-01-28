@@ -1,6 +1,6 @@
 <?php
 
-namespace Tonik\Theme\App\Setup;
+namespace Twiggy\App\Setup;
 
 /*
 |-----------------------------------------------------------
@@ -13,13 +13,3 @@ namespace Tonik\Theme\App\Setup;
 |
 */
 
-/**
- * Example action handler.
- *
- * @return integer
- */
-function example_action()
-{
-    //
-}
-add_filter('excerpt_length', 'Tonik\Theme\App\Setup\example_action');

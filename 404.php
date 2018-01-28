@@ -1,6 +1,6 @@
 <?php
 
-namespace Tonik\Theme\NotFound;
+namespace Twiggy\NotFound;
 
 /*
 |------------------------------------------------------------------
@@ -12,25 +12,12 @@ namespace Tonik\Theme\NotFound;
 |
 */
 
-use function Tonik\Theme\App\template;
+use Timber\Menu;
+use function Twiggy\App\theme;
 
-/**
- * Renders 404 page header.
- *
- * @see resources/templates/index.tpl.php
- */
-function render_header()
-{
-    template('partials/header', [
-        'title' => __('Not Found'),
-        'lead' => __('The page you are looking for no longer exists.'),
-    ]);
-}
-add_action('theme/index/header', 'Tonik\Theme\NotFound\render_header');
+$menu = new Menu( 'portfolio' );
+$portfolio = \Timber::get_posts( theme()->get( 'portfolio_args' ) );
+$context[ 'portfolio' ] = $portfolio;
+$context[ 'menu' ] = $menu;
 
-/**
- * Renders 404 page.
- *
- * @see resources/templates/index.tpl.php
- */
-template('index');
+\Timber::render( '404.twig', $context );

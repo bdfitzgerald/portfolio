@@ -1,6 +1,6 @@
 <?php
 
-namespace Tonik\Theme\App\Structure;
+namespace Twiggy\App\Structure;
 
 /*
 |-----------------------------------------------------------
@@ -21,4 +21,4 @@ function add_image_sizes()
 {
     add_image_size('custom-thumbnail', 800, 600, true);
 }
-add_action('after_setup_theme', 'Tonik\Theme\App\Structure\add_image_sizes');
+add_action('after_setup_theme', 'Twiggy\App\Structure\add_image_sizes');

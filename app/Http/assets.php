@@ -1,6 +1,6 @@
 <?php
 
-namespace Tonik\Theme\App\Http;
+namespace Twiggy\App\Http;
 
 /*
 |-----------------------------------------------------------------
@@ -13,7 +13,7 @@ namespace Tonik\Theme\App\Http;
 |
 */
 
-use function Tonik\Theme\App\asset_path;
+use function Twiggy\App\asset_path;
 
 /**
  * Registers theme stylesheet files.
@@ -22,8 +22,10 @@ use function Tonik\Theme\App\asset_path;
  */
 function register_stylesheets() {
     wp_enqueue_style('app', asset_path('css/app.css'));
+    wp_enqueue_style( 'material-icons','https://fonts.googleapis.com/icon?family=Material+Icons' );
+
 }
-add_action('wp_enqueue_scripts', 'Tonik\Theme\App\Http\register_stylesheets');
+add_action('wp_enqueue_scripts', 'Twiggy\App\Http\register_stylesheets');
 
 /**
  * Registers theme script files.
@@ -32,8 +34,9 @@ add_action('wp_enqueue_scripts', 'Tonik\Theme\App\Http\register_stylesheets');
  */
 function register_scripts() {
     wp_enqueue_script('app', asset_path('js/app.js'), ['jquery'], null, true);
+    wp_enqueue_script('capatcha', 'https://www.google.com/recaptcha/api.js', [], null, true);
 }
-add_action('wp_enqueue_scripts', 'Tonik\Theme\App\Http\register_scripts');
+add_action('wp_enqueue_scripts', 'Twiggy\App\Http\register_scripts');
 
 /**
  * Registers editor stylesheets.
@@ -43,7 +46,7 @@ add_action('wp_enqueue_scripts', 'Tonik\Theme\App\Http\register_scripts');
 function register_editor_stylesheets() {
     add_editor_style(asset_path('css/app.css'));
 }
-add_action('admin_init', 'Tonik\Theme\App\Http\register_editor_stylesheets');
+add_action('admin_init', 'Twiggy\App\Http\register_editor_stylesheets');
 
 /**
  * Moves front-end jQuery script to the footer.
@@ -58,4 +61,4 @@ function move_jquery_to_the_footer($wp_scripts) {
         $wp_scripts->add_data('jquery-migrate', 'group', 1);
     }
 }
-add_action('wp_default_scripts', 'Tonik\Theme\App\Http\move_jquery_to_the_footer');
+add_action('wp_default_scripts', 'Twiggy\App\Http\move_jquery_to_the_footer');

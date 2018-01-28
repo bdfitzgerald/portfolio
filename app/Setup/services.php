@@ -1,6 +1,6 @@
 <?php
 
-namespace Tonik\Theme\App\Setup;
+namespace Twiggy\App\Setup;
 
 /*
 |-----------------------------------------------------------
@@ -13,7 +13,7 @@ namespace Tonik\Theme\App\Setup;
 |
 */
 
-use function Tonik\Theme\App\theme;
+use function Twiggy\App\theme;
 use Tonik\Gin\Foundation\Theme;
 use WP_Query;
 
@@ -25,17 +25,14 @@ use WP_Query;
 function bind_books_service()
 {
     /**
-     * Binds service for retrieving posts of specific post type.
-     *
-     * @param \Tonik\Gin\Foundation\Theme $theme  Instance of the service container
-     * @param array $parameters  Parameters passed on service resolving
-     *
-     * @return \WP_Post[]
+     * Binds service for returning Args for Timber::get_posts.
+     *     *
+     * @return []
      */
-    theme()->bind('books', function (Theme $theme, $parameters) {
-        return new WP_Query([
-            'post_type' => 'book',
-        ]);
+    theme()->bind('portfolio_args', function () {
+        return [
+            'post_type' => 'portfolio',
+        ];
     });
 }
-add_action('init', 'Tonik\Theme\App\Setup\bind_books_service');
+add_action('init', 'Twiggy\App\Setup\bind_books_service');

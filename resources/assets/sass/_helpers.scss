@@ -1,0 +1,12 @@
+.is {
+  &-transparent {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  &-out-of-view {
+    transform: translateY(-79px);
+  }
+  &-hidden {
+    display: none;
+  }
+}

@@ -1,0 +1,12 @@
+.c-footer {
+  position: relative;
+  background-color: $primary;
+  padding: 20px;
+  transition: all .3s ease;
+  &__contact {
+    transition: all .3s ease;
+    color: $white;
+    text-align: center;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,77 @@
+.c-form {
+  display: flex;
+  flex-wrap: wrap;
+  &__input-group {
+    width: 45%;
+    padding: 0 2rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+  &__input-control {
+    position: relative;
+    padding-top: 2rem;
+    overflow: hidden;
+  }
+  &__input-label {
+    transition: all .5s ease;
+    color: $grey;
+    position: absolute;
+    left: 1rem;
+    top: 3rem;
+  }
+  &__input-field {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid $grey;
+    width: 100%;
+    padding: 1rem;
+    color: #fafafa;
+    transition: all .5s ease;
+    &:focus {
+      border: none;
+      border-bottom: 1px solid $accent;
+      box-shadow: 0 1px 0 0 $accent;
+      outline: none;
+      & + .c-form__input-label {
+        color: $accent;
+        top: 1rem;
+      }
+      &:not(:placeholder-shown) {
+        &:valid {
+          & + .c-form__input-label {
+            color: $success;
+          }
+        }
+        &:invalid {
+          & + .c-form__input-label {
+            color: $success;
+          }
+        }
+      }
+    }
+    &:not(:placeholder-shown) {
+      & + .c-form__input-label {
+        top: 1rem;
+      }
+      &:valid {
+        border-bottom: 2px solid $success;
+      }
+      &:invalid {
+        border-bottom: 2px solid $error;
+      }
+    }
+    &--tall {
+      height: 204px;
+    }
+  }
+}
+
+@media #{$medium-and-down} {
+
+  .c-form {
+    &__input-group {
+      width: 100%;
+    }
+  }
+}

@@ -1,37 +1,18 @@
 <?php
 
-namespace Tonik\Theme\Index;
+    namespace Twiggy\Index;
 
-/*
-|------------------------------------------------------------------
-| Index Controller
-|------------------------------------------------------------------
-|
-| Think about theme template files as some sort of controllers
-| from MVC design pattern. They should link application
-| logic with your theme view templates files.
-|
-*/
+    /*
+    *------------------------------------------------------------------
+    * Index Controller
+    *------------------------------------------------------------------
+    *
+    * Used as a controller to setup Timber Context for the Index Page
+    * and add/remove any actions that are will/won't be needed
+    *
+    */
 
-use function Tonik\Theme\App\template;
+    $context = Timber::get_context();
+    $context[ 'posts' ] = Timber::get_posts();
 
-/**
- * Renders index page header.
- *
- * @see resources/templates/index.tpl.php
- */
-function render_header()
-{
-    template('partials/header', [
-        'title' => __('Tonik — WordPress Starter Theme'),
-        'lead' => __('Tonik is a WordPress Starter Theme which aims to modernize, organize and enhance some aspects of WordPress theme development. Take a look at what is waiting for you.'),
-    ]);
-}
-add_action('theme/index/header', 'Tonik\Theme\Index\render_header');
-
-/**
- * Renders index page.
- *
- * @see resources/templates/index.tpl.php
- */
-template('index');
+    \Timber::render( 'index.twig', $context );

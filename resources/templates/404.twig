@@ -1,0 +1,16 @@
+{% extends "base.twig" %}
+
+{% block header %}
+  <div class="c-header__background-gradient"></div>
+  <h1 class="c-header__title c-header__title--light">404 Page Not Found</h1>
+{% endblock %}
+
+{% block content %}
+  <section class="c-section">
+    <h3 class="c-section__title">The Page you are looking for could not be found</h3>
+    <article class="c-section__content h-flow-text">
+      <p>Go back to the <a href="/">home page</a></p>
+    </article>
+  </section>
+  {%  include 'partials/portfolio/portfolio-archive.twig' %}
+{% endblock %}

@@ -1,3 +1,14 @@
-// Theme by default loads a jQuery as dependency of the main script.
-// Let's include it using ES6 modules import.
-import $ from 'jquery'
+import { SmoothScroll } from "./smooth-scroll";
+import { StickyHeader } from "./header";
+import { MobileNavigation } from "./mobile-navigation";
+import { FormSubmission } from "./form";
+
+new SmoothScroll();
+new StickyHeader( 'main-nav' );
+new MobileNavigation( 'mobile-nav', 'mobile-trigger' )
+const contactForm = new FormSubmission( 'contact' );
+
+function submitForm(token) {
+  console.log(token);
+  contactForm.submit()
+}

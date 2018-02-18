@@ -3,6 +3,7 @@ export class StickyHeader {
 
     document.addEventListener( 'DOMContentLoaded', () => {
       this.nav = document.getElementById( id );
+      console.log(this.nav);
       this.transparent = transparent;
       this.hideOnRead = hideOnRead;
       this.breakpoint = breakpoint;

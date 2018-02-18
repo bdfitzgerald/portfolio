@@ -9,7 +9,6 @@ export class SmoothScroll {
         if ( hash.indexOf( '#' ) === 0 ) {
           link.addEventListener( 'click', ( evt ) => {
             evt.preventDefault();
-            console.log( evt );
             if ( !evt.target.hash ) {
               this.currentHash = evt.srcElement.baseURI.split( "/" ).pop().substring( 1 );
             } else {

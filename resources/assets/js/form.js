@@ -7,7 +7,6 @@ export class FormSubmission {
       this.errors = [];
       this.fields = this.form.getElementsByClassName( 'c-form__input-field' );
       this.loading = false;
-      console.log( this.fields );
 
       this.form.addEventListener( 'submit', evt => {
         evt.preventDefault();

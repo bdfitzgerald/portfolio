@@ -28,6 +28,7 @@ export class StickyHeader {
   }
 
   _changeHide() {
+    console.log(this.previousScrollPosition, this.currentScrollPosition);
     if ( this.previousScrollPosition < this.currentScrollPosition ) {
       if ( !this.nav.classList.contains( 'is-out-of-view' ) ) {
         this.nav.classList.add( 'is-out-of-view' );
@@ -41,6 +42,7 @@ export class StickyHeader {
 
   _changeTransparency() {
     if ( this.currentScrollPosition < this.breakpoint ) {
+      console.log(this.currentScrollPosition, this.breakpoint );
       if ( !this.nav.classList.contains( 'is-transparent' ) ) {
         this.nav.classList.add( 'is-transparent' );
       }

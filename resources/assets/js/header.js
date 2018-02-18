@@ -7,21 +7,21 @@ export class StickyHeader {
       this.transparent = transparent;
       this.hideOnRead = hideOnRead;
       this.breakpoint = breakpoint;
-      this.currentScrollPosition = document.body.scrollTop;
+      this.currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
 
       if ( this.transparent ) {
         this._changeTransparency();
       }
 
       document.addEventListener( 'scroll', () => {
-        this.currentScrollPosition = document.body.scrollTop;
+        this.currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
         if ( this.transparent ) {
           this._changeTransparency();
         }
         if ( this.hideOnRead ) {
           this._changeHide();
         }
-        this.previousScrollPosition = document.body.scrollTop;
+        this.previousScrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
       } )
     } );
 

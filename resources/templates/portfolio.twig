@@ -3,7 +3,7 @@
 {% block content %}
   <section class="c-portfolio">
     <div class="c-portfolio__image-container">
-      <img class="c-portfolio__image" src="{{ options.image_preview.url }}">
+      <img class="c-portfolio__image" src="{{ options.image_preview.url }}" alt="Image for {{ post.title }}">
     </div>
     <div class="c-portfolio__info">
       <div class="has-tooltip">
@@ -20,49 +20,49 @@
         {% for stack in tech %}
           {% if stack == "angular" %}
             <div class="has-tooltip">
-              <img class="c-technology__image" src="{{ theme.link }}/public/images/angular.png">
+              <img class="c-technology__image" src="{{ theme.link }}/public/images/angular.png" alt="Angular logo">
               <span class="has-tooltip__text">Angular</span>
             </div>
           {% endif %}
 
           {% if stack == "laravel" %}
             <div class="has-tooltip">
-              <img class="c-technology__image" src="{{ theme.link }}/public/images/laravel.png">
+              <img class="c-technology__image" src="{{ theme.link }}/public/images/laravel.png" alt="Laravel logo">
               <span class="has-tooltip__text">Laravel</span>
             </div>
           {% endif %}
 
           {% if stack == "ionic" %}
             <div class="has-tooltip">
-              <img class="c-technology__image" src="{{ theme.link }}/public/images/ionic.png">
+              <img class="c-technology__image" src="{{ theme.link }}/public/images/ionic.png" alt="Ionic logo">
               <span class="has-tooltip__text">Ionic</span>
             </div>
           {% endif %}
 
           {% if stack == "firebase" %}
             <div class="has-tooltip">
-              <img class="c-technology__image" src="{{ theme.link }}/public/images/firebase.png">
+              <img class="c-technology__image" src="{{ theme.link }}/public/images/firebase.png" alt="Firebase logo">
               <span class="has-tooltip__text">FireBase</span>
             </div>
           {% endif %}
 
           {% if stack == "alexa" %}
             <div class="has-tooltip">
-              <img class="c-technology__image" src="{{ theme.link }}/public/images/alexa.png">
+              <img class="c-technology__image" src="{{ theme.link }}/public/images/alexa.png" alt="Alexa logo">
               <span class="has-tooltip__text">Amazon Alexa</span>
             </div>
           {% endif %}
 
           {% if stack == "assistant" %}
             <div class="has-tooltip">
-              <img class="c-technology__image" src="{{ theme.link }}/public/images/assistant.png">
+              <img class="c-technology__image" src="{{ theme.link }}/public/images/assistant.png" alt="Google Assistan logo">
               <span class="has-tooltip__text">Google Assistant</span>
             </div>
           {% endif %}
 
           {% if stack == "wordpress" %}
             <div class="has-tooltip">
-              <img class="c-technology__image" src="{{ theme.link }}/public/images/wordpress.png">
+              <img class="c-technology__image" src="{{ theme.link }}/public/images/wordpress.png" alt="WordPress logo">
               <span class="has-tooltip__text">WordPress</span>
             </div>
           {% endif %}

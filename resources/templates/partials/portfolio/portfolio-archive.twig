@@ -3,7 +3,7 @@
     <a href="{{ portfolio_item.link }}" class="c-portfolio-archive__container"
        style="background-color: {{ portfolio_item.get_field('options').colour }}">
       <div class="c-portfolio-archive__background-gradient"></div>
-      <img class="c-portfolio-archive__image" src="{{ portfolio_item.thumbnail.src }}" alt>
+      <img class="c-portfolio-archive__image" src="{{ portfolio_item.thumbnail.src }}" alt="Image for {{ post.title }}">
     </a>
   {% endfor %}
 </section>
